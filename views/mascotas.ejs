@@ -1,6 +1,14 @@
 <%- include("template/cabecera", {tituloPagina: "Bienvenidos"}) %>
 
 <div class="container">
+  <h1>CRUD Mascotas - con mongoDB</h1>
+  <a href="/mascotas/crear">
+    <button
+      class="btn btn-success btn-block my-4"
+    >
+      Crear nueva mascotas
+    </button>
+  </a>
   <table class="table">
     <thead>
       <tr>
@@ -18,7 +26,14 @@
               <th scope="row"><%= mascotas.id %> </th>
               <td><%= mascotas.nombre %> </td>
               <td><%= mascotas.descripcion %> </td>
-              <td>@mdo</td>
+              <td>
+                <a 
+                  href="mascotas/<%= mascotas.id %>" 
+                  class="btn btn-warning btn-sm"
+                >
+                  editar
+                </a>
+              </td>
             </tr>
 
         <% }) %>
